@@ -1,0 +1,19 @@
+{
+	"name": "js-Benchmark",
+	"version": "0.0.1",
+	"scripts": {
+		"prestart": "/usr/local/bin/npm install",
+		"start": "webpack --display-error-details --config webpack.config.js"
+	},
+	"devDependencies":
+	{
+		"typescript": "2.1.5",
+		"ts-loader": "1.3.3",
+		"@types/backbone": "^1.3.33",
+		"@types/handlebars": "^4.0.31"
+	},
+	"dependencies":[
+		"@types/backbone@latest",
+		"@types/handlebars@latest"
+	]
+}

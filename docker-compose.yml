@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+   gulp:
+     image: gulp-sass-typescript
+     volumes:
+       - C:\Users\josej\Documents\GitHub\js-benchmark:/src
