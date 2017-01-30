@@ -1,0 +1,11 @@
+{
+  "files": [
+    "typings/index.d.ts"
+  ],
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "jsx": "react"
+  }
+}
