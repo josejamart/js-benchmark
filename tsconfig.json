@@ -1,9 +1,11 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "noImplicitAny": true,
-        "removeComments": true,
-        "preserveConstEnums": true,
-        "target":"es5"
-    }
+  "files": [
+    "typings/index.d.ts"
+  ],
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "jsx": "react"
+  }
 }
