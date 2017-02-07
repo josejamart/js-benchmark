@@ -1,7 +1,9 @@
 {
   "files": [
-    "typings/index.d.ts"
-  ],
+        "typings/index.d.ts",
+        "Backbone/index.ts",
+        "Backbone_React/app/src/index.tsx"
+    ],
   "compileOnSave": false,
   "compilerOptions": {
     "target": "ES5",

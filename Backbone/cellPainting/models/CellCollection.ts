@@ -1,8 +1,7 @@
 import * as Backbone from 'backbone';
-import * as Configuration from '../../Config';
-import * as CellModel from './CellModel';
+import {Configuration} from '../../Config';
+import {CellModel} from './CellModel';
 
-class CellCollection extends Backbone.Model{
+export class CellCollection extends Backbone.Collection<CellModel>{
   url = Configuration.URL_BASE + '/Backbone/cellPainting/cellData.json';
-  model = CellModel;
 }

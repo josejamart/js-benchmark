@@ -2,6 +2,7 @@ version: '2'
 
 services:
    gulp:
-     image: gulp-sass-typescript
+     image: webpack
      volumes:
        - C:\Users\josej\Documents\GitHub\js-benchmark:/src
+     entrypoint: ["npm","run","bundle"]

@@ -1,5 +1,5 @@
 import * as Backbone from 'backbone';
 
-class CellModel extends Backbone.Model{
+export class CellModel extends Backbone.Model{
 
 }
