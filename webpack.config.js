@@ -11,14 +11,15 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     // To enhance the debugging process. More info: https://webpack.js.org/configuration/devtool/
     devtool: 'source-map',
     // Using webpack multiple entry point
     entry: {
-        'Backbone_React': './Backbone_React/app/src/index.tsx',
-        'Backbone':'./Backbone/index.ts'
+        'js-benchmark': './src/index.ts',
+        'backbone_react': './src/backbone_react/app/src/index.tsx',
+        'backbone.t1':'./src/backbone/T1-bigPainting/index.ts'
     },
     output: {
         path: path.join(__dirname, './dist'),
@@ -26,10 +27,9 @@ module.exports = {
     },
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ["",".ts", ".tsx", ".js"]
+        extensions: [".ts", ".tsx", ".js"]
     },
     plugins: [
-        new HtmlWebpackPlugin(),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')      // Reduces 78 kb on React library
@@ -37,11 +37,6 @@ module.exports = {
             'DEBUG': false,                                 // Doesn´t have effect on my example
             '__DEVTOOLS__': false                           // Doesn´t have effect on my example
         }),
-        // Plugings for optimizing size and performance.
-        // Here you have all the available by now:
-        //    Webpack 1. https://github.com/webpack/webpack/blob/v1.13.3/lib/optimize
-        //    Webpack 2. https://github.com/webpack/webpack/tree/master/lib/optimize
-        new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
@@ -67,9 +62,13 @@ module.exports = {
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.AggressiveMergingPlugin(),
-        new ExtractTextPlugin('./styles/bundle.css', {
-            allChunks: true
-        })
+        new ExtractTextPlugin('./styles/bundle.css'),
+        new CopyWebpackPlugin([
+           { from: 'src/app/index.html', to:'index.html' },
+           { from: 'src/data/*.json', to: 'data/[name].[ext]'},
+           // {output}/file.txt
+           { from: 'src/backbone/T1-bigPainting/index.html', to:'backbone/T1-bigPainting/index.html' },
+         ])
     ],
     module: {
         loaders: [
@@ -80,8 +79,23 @@ module.exports = {
             },
             {
                 test: /\.scss$/i,
-                loader: ExtractTextPlugin.extract("style", "css!sass")
+                loader: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
             }
         ]
+    },
+    devServer: {
+      contentBase: path.join(__dirname, "dist"),
+      compress: true,
+      port: 3000,
+      host: "0.0.0.0"
+    },
+    watch: true,
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: 1000,
+      ignored: /node_modules/
     }
 };

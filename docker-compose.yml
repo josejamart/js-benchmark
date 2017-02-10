@@ -3,6 +3,13 @@ version: '2'
 services:
    gulp:
      image: webpack
+     ports:
+       - "3000:3000"
      volumes:
        - C:\Users\josej\Documents\GitHub\js-benchmark:/src
      entrypoint: ["npm","run","bundle"]
+   watch:
+     image: webpack
+     volumes:
+       - C:\Users\josej\Documents\GitHub\js-benchmark:/src
+     entrypoint: ["npm","run","watch"]

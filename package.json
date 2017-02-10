@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "js-benchmark for Backbone and React",
   "scripts": {
-    "bundle": "webpack && cp Backbone/index.html dist/index.html"
+    "watch":"webpack --watch",
+    "prebundle":"npm install",
+    "bundle": "webpack-dev-server"
   },
   "dependencies": {
     "react": "^15.3.2",
@@ -21,15 +23,16 @@
     "babel-preset-es2016": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "path": "^0.12.7",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "ts-loader": "^2.0.0",
     "typescript": "^2.1.5",
     "typings": "^2.0.0",
-    "webpack": "^1.14.0",
-    "html-webpack-plugin":"^2.28.0"
+    "webpack": "^2.2.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "webpack-dev-server":"^2.3.0"
   },
   "repository": {
     "type": "git",

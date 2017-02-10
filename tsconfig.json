@@ -1,8 +1,7 @@
 {
-  "files": [
-        "typings/index.d.ts",
-        "Backbone/index.ts",
-        "Backbone_React/app/src/index.tsx"
+  "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx"
     ],
   "compileOnSave": false,
   "compilerOptions": {
