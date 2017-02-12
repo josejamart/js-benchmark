@@ -6,7 +6,7 @@ import {RowView} from './RowView';
 export class CellPaintingView extends Backbone.View<Backbone.Model>{
     rows: RowCollection;
     views: Array<RowView>;
-    constructor(options?) {
+    constructor(options?: any) {
         super(options);
         this.rows = options.data;
         this.views = [];

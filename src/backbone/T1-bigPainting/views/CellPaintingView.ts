@@ -5,7 +5,7 @@ import {RowView} from './RowView';
 
 export class CellPaintingView extends Backbone.View<Backbone.Model>{
     rows: RowCollection;
-    constructor(options?) {
+    constructor(options?: any) {
         super(options);
         this.rows = options.data;
     }
