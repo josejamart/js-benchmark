@@ -1,4 +1,4 @@
-import {AppView} from '../../app/views/AppView';
+import {AppView} from '../../benchmarkFramework/views/AppView';
 import * as Backbone from 'backbone';
 import * as $ from 'jquery';
 import * as _ from 'underscore';
@@ -14,7 +14,7 @@ $(() => {
 
     let evt: Backbone.Events = _.extend({}, Backbone.Events);
 
-    evt.listenTo(cells, "sync", function(collection) {
+    evt.listenTo(cells, "sync", function(collection: any) {
         let loopCount = 1;
         let totalTime = 0;
         // Finally, we kick things off by creating the **App**.
