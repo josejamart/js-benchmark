@@ -6,7 +6,7 @@ import * as moment from 'moment';
 export class AppView extends Backbone.View<Backbone.Model>{
     workflow: AppWorkflowModel;
     executionId: string;
-    constructor(options) {
+    constructor(options: any) {
         super(options);
         this.executionId = "t-id-" + _.random(0, 100);
         this.workflow = new AppWorkflowModel();

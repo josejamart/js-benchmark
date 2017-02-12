@@ -1,13 +1,24 @@
 {
-  "include": [
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        "node_modules/moment/*.d.ts"
-    ],
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "ES5",
+    "experimentalDecorators": true,
+    "target": "es5",
     "module": "commonjs",
-    "jsx": "react"
+    "jsx": "react",
+    "sourceMap": true,
+    "alwaysStrict": true,
+    "declaration": false,
+    "noImplicitAny": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "backbone",
+      "handlebars",
+      "jquery",
+      "react",
+      "react-dom",
+      "underscore"
+    ]
   }
 }

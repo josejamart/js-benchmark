@@ -1,4 +1,4 @@
-import {AppView} from './app/views/AppView';
+import {AppView} from './benchmarkFramework/views/AppView';
 import * as $ from 'jquery';
 
 $(() => {
