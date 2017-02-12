@@ -15,6 +15,7 @@ module.exports = {
         contentBase: resolve(__dirname, '../dist'),
         publicPath: '/',
         port: 3000,
+        host:"0.0.0.0",
         historyApiFallback: true,
         // All the stats options here: https://webpack.js.org/configuration/stats/
         stats: {
@@ -57,6 +58,9 @@ module.exports = {
             { from: 'src/backbone/T3-settingEvents-rerender/index.html', to: 'backbone/T3-settingEvents-rerender/index.html' }
         ])
     ],
+    watchOptions: {
+      poll: true
+    },
     module: {
         rules: [
             {
