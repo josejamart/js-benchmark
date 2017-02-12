@@ -5,10 +5,38 @@
     "tests": [
       {
         "id":"t1a",
-        "title":"Rendering 42.000 elements with a single text.",
+        "title":"Rendering 42.000 elements with a single text.This test use Backbone views.",
         "level":"1",
         "sublevel":"a",
         "url":"../backbone/T1-bigPainting/index.html"
+      },
+      {
+        "id":"t1b",
+        "title":"Rendering 42.000 elements with a single text. This test use a complex underscore template",
+        "level":"1",
+        "sublevel":"b",
+        "url":"../backbone/T1-bigPainting-underscore-template/index.html"
+      },
+      {
+        "id":"t1c",
+        "title":"Rendering 42.000 elements with a single text. This test use a complex handlebars template",
+        "level":"1",
+        "sublevel":"c",
+        "url":"../backbone/T1-bigPainting-handlebars/index.html"
+      },
+      {
+        "id":"t2",
+        "title":"Rendering 42.000 elements with a single text and a click and a double click handlers.",
+        "level":"2",
+        "sublevel":"a",
+        "url":"../backbone/T2-settingEvents/index.html"
+      },
+      {
+        "id":"t3",
+        "title":"Rendering two times 42.000 elements with a single text and a click and a double click handlers.",
+        "level":"3",
+        "sublevel":"a",
+        "url":"../backbone/T3-settingEvents-rerender/index.html"
       }
     ]
   }

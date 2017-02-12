@@ -1,7 +1,8 @@
 {
   "include": [
         "src/**/*.ts",
-        "src/**/*.tsx"
+        "src/**/*.tsx",
+        "node_modules/moment/*.d.ts"
     ],
   "compileOnSave": false,
   "compilerOptions": {

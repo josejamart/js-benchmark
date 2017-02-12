@@ -19,7 +19,11 @@ module.exports = {
     entry: {
         'js-benchmark': './src/index.ts',
         'backbone_react': './src/backbone_react/app/src/index.tsx',
-        'backbone.t1':'./src/backbone/T1-bigPainting/index.ts'
+        'backbone.t1':'./src/backbone/T1-bigPainting/index.ts',
+        'backbone.t1b':'./src/backbone/T1-bigPainting-underscore-template/index.ts',
+        'backbone.t1c':'./src/backbone/T1-bigPainting-handlebars/index.ts',
+        'backbone.t2':'./src/backbone/T2-settingEvents/index.ts',
+        'backbone.t3':'./src/backbone/T3-settingEvents-rerender/index.ts'
     },
     output: {
         path: path.join(__dirname, './dist'),
@@ -27,7 +31,10 @@ module.exports = {
     },
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx", ".js"]
+        extensions: [".ts", ".tsx", ".js"],
+        alias: {
+          'handlebars': 'handlebars/dist/handlebars.js'
+        }
     },
     plugins: [
         new webpack.DefinePlugin({
@@ -68,6 +75,10 @@ module.exports = {
            { from: 'src/data/*.json', to: 'data/[name].[ext]'},
            // {output}/file.txt
            { from: 'src/backbone/T1-bigPainting/index.html', to:'backbone/T1-bigPainting/index.html' },
+           { from: 'src/backbone/T1-bigPainting-underscore-template/index.html', to:'backbone/T1-bigPainting-underscore-template/index.html' },
+           { from: 'src/backbone/T1-bigPainting-handlebars/index.html', to:'backbone/T1-bigPainting-handlebars/index.html' },
+           { from: 'src/backbone/T2-settingEvents/index.html', to:'backbone/T2-settingEvents/index.html' },
+           { from: 'src/backbone/T3-settingEvents-rerender/index.html', to:'backbone/T3-settingEvents-rerender/index.html' }
          ])
     ],
     module: {

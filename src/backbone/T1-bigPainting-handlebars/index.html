@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" data-framework="typescript">
+	<head>
+		<meta charset="utf-8">
+		<title>Backbone.js Cell painting Benkchmar</title>
+	</head>
+	<body>
+		<div class="app"></div>
+
+    <script type="text/x-handlebars-template" id="all-template">
+			{{#each rows}}
+				<div>
+					{{#each cells}}
+						<span>{{text}}</span>
+					{{/each}}
+				</div>
+			{{/each}}
+    </script>
+
+		<script src="../../backbone.t1c.js"></script>
+	</body>
+</html>

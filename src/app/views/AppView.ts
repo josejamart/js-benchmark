@@ -1,6 +1,7 @@
 import * as Backbone from 'backbone';
 import {AppWorkflowModel} from '../models/AppWorkflowModel';
 import * as _ from 'underscore';
+import * as moment from 'moment';
 
 export class AppView extends Backbone.View<Backbone.Model>{
     workflow: AppWorkflowModel;
@@ -40,7 +41,8 @@ export class AppView extends Backbone.View<Backbone.Model>{
     }
 
     updateTextResult(id: string, result: any) {
-        this.$el.find("[data-id=" + id + "]").html("Time elapsed: " + result.totalTime + " ms");
-
+        let duration = moment.duration(result.totalTime);
+        let time = duration.get('minutes') + "m " + duration.get('seconds') + "s " + duration.get('milliseconds') + "ms";
+        this.$el.find("[data-id=" + id + "]").html("Time elapsed: " + time + " (" + result.totalTime + " ms)");
     }
 }
