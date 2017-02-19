@@ -1,20 +1,19 @@
 import * as Backbone from 'backbone';
 import * as $ from 'jquery';
-import * as _ from 'underscore';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 import {RowCollection} from '../models/RowCollection';
+import App from "../containers/app";
 
 export class CellPaintingView extends Backbone.View<Backbone.Model>{
     rows: RowCollection;
-    template: (data: any) => string;
-    constructor(options?) {
+    constructor(options?: any) {
         super(options);
         this.rows = options.data;
-        this.template = _.template($('#all-template').html());
     }
 
     render() {
-        this.$el.html(this.template({ rows: this.rows.toJSON() }))
-
-        return this;
+      ReactDOM.render(<App rows={this.rows} />, this.el);
+      return this;
     }
 }

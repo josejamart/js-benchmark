@@ -12,22 +12,20 @@ $(() => {
     let testId = window.location.hash.split('#')[1];
     let cells = new RowCollection();
 
-    let evt: Backbone.Events = _.extend({}, Backbone.Events);
+    cells.fetch({
+      success: (collection: any) => {
+          let loopCount = 1;
+          let totalTime = 0;
+          // Finally, we kick things off by creating the **App**.
+          let startDate = new Date();
 
-    evt.listenTo(cells, "sync", function(collection: any) {
-        let loopCount = 1;
-        let totalTime = 0;
-        // Finally, we kick things off by creating the **App**.
-        let startDate = new Date();
-
-        let app = new CellPaintingView({ el: $(".app"), data: collection });
-        app.render();
-        let endDate = new Date();
-        totalTime += endDate.getTime() - startDate.getTime();
-        localStorage.setItem(testId, JSON.stringify({ "totalTime": totalTime, "loopCount": loopCount }));
-        window.close();
+          let app = new CellPaintingView({ el: $(".app"), data: collection });
+          app.render();
+          let endDate = new Date();
+          totalTime += endDate.getTime() - startDate.getTime();
+          localStorage.setItem(testId, JSON.stringify({ "totalTime": totalTime, "loopCount": loopCount }));
+          window.close();
+      }
     });
-
-    cells.fetch();
 
 });

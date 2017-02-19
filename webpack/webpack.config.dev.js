@@ -28,12 +28,15 @@ module.exports = {
     // Using webpack multiple entry point
     entry: {
         'js-benchmark': './src/index.ts',
-        'backbone_react': './src/backbone_react/app/src/index.tsx',
         'backbone.t1': './src/backbone/T1-bigPainting/index.ts',
         'backbone.t1b': './src/backbone/T1-bigPainting-underscore-template/index.ts',
         'backbone.t1c': './src/backbone/T1-bigPainting-handlebars/index.ts',
         'backbone.t2': './src/backbone/T2-settingEvents/index.ts',
-        'backbone.t3': './src/backbone/T3-settingEvents-rerender/index.ts'
+        'backbone.t3': './src/backbone/T3-settingEvents-rerender/index.ts',
+        'backbone_react.t1': './src/backbone_react/T1-bigPainting/index.tsx',
+        'backbone_react.t1b': './src/backbone_react/T1-bigPainting-one-component/index.tsx',
+        'backbone_react.t2': './src/backbone_react/T2-settingEvents/index.tsx',
+        'backbone_react.t3': './src/backbone_react/T3-settingEvents-rerender/index.tsx'
     },
     output: {
         path: resolve(__dirname, './../dist'),
@@ -51,11 +54,8 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: 'src/benchmarkFramework/index.html', to: 'index.html' },
             { from: 'src/data/*.json', to: 'data/[name].[ext]' },
-            { from: 'src/backbone/T1-bigPainting/index.html', to: 'backbone/T1-bigPainting/index.html' },
-            { from: 'src/backbone/T1-bigPainting-underscore-template/index.html', to: 'backbone/T1-bigPainting-underscore-template/index.html' },
-            { from: 'src/backbone/T1-bigPainting-handlebars/index.html', to: 'backbone/T1-bigPainting-handlebars/index.html' },
-            { from: 'src/backbone/T2-settingEvents/index.html', to: 'backbone/T2-settingEvents/index.html' },
-            { from: 'src/backbone/T3-settingEvents-rerender/index.html', to: 'backbone/T3-settingEvents-rerender/index.html' }
+            { context: './src', from: 'backbone/**/index.html',  to:'[path][name].[ext]' },
+            { context: './src', from: 'backbone_react/**/index.html',  to:'[path][name].[ext]' },
         ])
     ],
     watchOptions: {

@@ -25,7 +25,18 @@ export class AppView extends Backbone.View<Backbone.Model>{
         return this;
     }
 
+    openTest(urls: Array<string>,index: number){
+      if(index < urls.length){
+          let newWindow = window.open(urls[index]);
+          let self = this;
+          newWindow.onunload = function(e) {
+            self.openTest(urls,index+1);
+        };
+      }
+    }
+
     startTests() {
+      let urls = [];
         this.$el.html("Starting test ..");
         for (let category of this.workflow.categories.models) {
             this.$el.append("<div data-id='" + category.get("id") + "'><b>" + category.get("title") + "</b></div>");
@@ -33,11 +44,11 @@ export class AppView extends Backbone.View<Backbone.Model>{
                 if (!_.isEmpty(test.get("url"))) {
                     this.$el.append("<div>" + test.get("title") + "</div>");
                     this.$el.append("<div data-id='" + test.collection.categoryId + "-" + test.get("id") + "'></div>");
-                    window.open(test.get("url") + "#" + this.executionId + "_" + test.collection.categoryId + "-" + test.get("id"));
+                    urls.push(test.get("url") + "#" + this.executionId + "_" + test.collection.categoryId + "-" + test.get("id"));
                 }
             }
         }
-
+        this.openTest(urls,0);
     }
 
     updateTextResult(id: string, result: any) {
