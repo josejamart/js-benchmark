@@ -1,6 +1,6 @@
-import * as $ from 'jquery';
 import {RowCollection} from './models/RowCollection';
 import {CellPaintingView} from './views/CellPaintingView';
+import * as $ from 'jquery';
 import MutationModel from "../../benchmarkFramework/models/MutationModel";
 
 $(() => {
@@ -11,13 +11,13 @@ $(() => {
     mutationModel.startListening(testId);
 
     cells.fetch({
-      success: (collection: any) => {
-        mutationModel.startRenderTime = new Date();
+        success : (collection: any) => {
+          mutationModel.startRenderTime = new Date();
 
-        let app = new CellPaintingView({ el: $("#app"), data: collection });
-        app.render();
+          let app = new CellPaintingView({ el: $(".app"), data: collection });
+          app.render();
 
-        mutationModel.registerTime(testId);
+          mutationModel.registerTime(testId);
       }
     });
 

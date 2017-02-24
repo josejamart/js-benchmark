@@ -20,5 +20,10 @@
       "react-dom",
       "underscore"
     ]
-  }
+  },
+  "filesGlob" : [
+    "**/*.ts",
+    "**/*.tsx",
+    "!node_modules/**"
+  ]
 }
