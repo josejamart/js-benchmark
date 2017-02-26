@@ -1,4 +1,4 @@
-import ResultModel from "../../benchmarkFramework/models/ResultModel";
+import ResultModel from "./ResultModel";
 
 export default class MutationModel {
   private startTime: Date;

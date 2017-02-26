@@ -9,10 +9,14 @@ export class AppView extends Backbone.View<Backbone.Model>{
     workflow: AppWorkflowModel;
     executionId: string;
     idTest: number;
+    template: (data: any) => string;
     constructor(options: any) {
         super(options);
         this.idTest = _.random(0, 100);
         this.executionId = "t-id-" + this.idTest;
+
+        this.template = _.template($('#result-template').html());
+
         this.workflow = new AppWorkflowModel();
         this.listenTo(this.workflow.categories, "sync", this.startTests);
         var self = this;
@@ -65,13 +69,7 @@ export class AppView extends Backbone.View<Backbone.Model>{
         let renderDuration = moment.duration(result.renderTime);
         let renderTime = renderDuration.get('minutes') + "m " + renderDuration.get('seconds') + "s " + renderDuration.get('milliseconds') + "ms";
 
-        var $container = $("<div>").html("<div><b>Results:</b></div>");
-        var $totalTime = $("<div>").html("<div style='margin-left:10px'>Total time elapsed: <b>" + totalTime + " (" + result.totalTime + " ms)</b></div>");
-        var $renderTime = $("<div>").html("<div style='margin-left:10px'>Number of muntations: <b>" + result.loopCount + "</b></div>");
-        var $numMutations = $("<div>").html("<div style='margin-left:10px'>Rendering time elapsed: <b>" + renderTime + " (" + result.renderTime + " ms)</b></div>");
-        $container.append($totalTime);
-        $container.append($renderTime);
-        $container.append($numMutations);
-        this.$el.find("[data-id=" + id + "]").empty().append($container);
+
+        this.$el.find("[data-id=" + id + "]").empty().append(this.template({totalTime: totalTime, renderTime: renderTime, result: result}));
     }
 }
