@@ -2,6 +2,7 @@ export interface ResultItem{
   totalTime: number;
   loopCount: number;
   renderTime: number;
+  lastCheck: Date;
 }
 
 export default class ResultModel {

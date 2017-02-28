@@ -2,33 +2,39 @@ import {RowCollection} from './models/RowCollection';
 import * as $ from 'jquery';
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import * as Backbone from 'backbone';
 import {Configuration} from '../../benchmarkFramework/Config';
 import App from "./containers/App";
 import MutationModel from "../../benchmarkFramework/models/MutationModel";
+import TestRouter from '../../benchmarkFramework/routers/TestRouter';
 
 $(() => {
-    let testId = window.location.hash.split('#')[1];
+  // Initiate the router
+  let app_router = new TestRouter({
+    testExecutor: (testId: string, close: boolean, mutationModel: MutationModel) => {
     let cells = new RowCollection();
     let cells1 = new RowCollection();
     cells1.url = Configuration.URL_BASE + '/data/cellData_1.json';
 
-    let mutationModel = new MutationModel();
-    mutationModel.startListening(testId);
-
     cells.fetch({
       success:(collection1: any)=>{
           cells1.fetch({success:(collection2: any)=>{
-            mutationModel.startRenderTime = new Date();
+            mutationModel.startRendering();
 
             ReactDOM.render(<App rows={collection1} />, $(".app")[0]);
 
             collection1.reset(cells1.toJSON(),{parse:true});
 
-            mutationModel.registerTime(testId);
+            mutationModel.endRendering();
           }});
 
         }
       }
     );
+}
+});
+
+// Start Backbone history a necessary step for bookmarkable URL's
+Backbone.history.start();
 
 });

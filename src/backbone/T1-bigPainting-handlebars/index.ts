@@ -1,23 +1,31 @@
 import * as $ from 'jquery';
+import * as Backbone from 'backbone';
 import {RowCollection} from './models/RowCollection';
 import {CellPaintingView} from './views/CellPaintingView';
 import MutationModel from "../../benchmarkFramework/models/MutationModel";
+import TestRouter from '../../benchmarkFramework/routers/TestRouter';
 
 $(() => {
-    let testId = window.location.hash.split('#')[1];
-    let cells = new RowCollection();
+  // Initiate the router
+  let app_router = new TestRouter({
+    testExecutor: (testId: string, close: boolean, mutationModel: MutationModel) => {
+      let cells = new RowCollection();
 
-    let mutationModel = new MutationModel();
-    mutationModel.startListening(testId);
 
-    cells.fetch({
-      success:(collection: any) => {
-        mutationModel.startRenderTime = new Date();
-        let app = new CellPaintingView({ el: $(".app"), data: collection });
-        app.render();
+      cells.fetch({
+        success: (collection: any) => {
+          mutationModel.startRendering();
 
-        mutationModel.registerTime(testId);
-      }
-    });
+          let app = new CellPaintingView({ el: $(".app"), data: collection });
+          app.render();
+
+          mutationModel.endRendering();
+        }
+      });
+    }
+  });
+
+  // Start Backbone history a necessary step for bookmarkable URL's
+  Backbone.history.start();
 
 });

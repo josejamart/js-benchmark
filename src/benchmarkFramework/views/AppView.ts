@@ -7,21 +7,16 @@ import {ResultItem} from '../models/ResultModel';
 
 export class AppView extends Backbone.View<Backbone.Model>{
     workflow: AppWorkflowModel;
-    executionId: string;
-    idTest: number;
     template: (data: any) => string;
     constructor(options: any) {
         super(options);
-        this.idTest = _.random(0, 100);
-        this.executionId = "t-id-" + this.idTest;
-
         this.template = _.template($('#result-template').html());
 
         this.workflow = new AppWorkflowModel();
         this.listenTo(this.workflow.categories, "sync", this.startTests);
         var self = this;
         window.addEventListener('storage', function(e) {
-            if (_.indexOf(e.key, self.executionId)) {
+            if (_.indexOf(e.key, self.workflow.executionId)) {
                 let testId = e.key.split("_")[1];
                 self.updateTextResult(testId, JSON.parse(e.newValue));
             }
@@ -33,33 +28,25 @@ export class AppView extends Backbone.View<Backbone.Model>{
         return this;
     }
 
-    openTest(urls: Array<string>,index: number){
-      if(index < urls.length){
-          let newWindow = window.open(urls[index]);
-          let self = this;
-          newWindow.onunload = function(e) {
-            self.openTest(urls,index+1);
-        };
-      }
-    }
-
     startTests() {
       let urls = [];
-        this.$el.html("Starting test ... id: "+this.idTest);
+        this.$el.html("Starting test ... id: "+this.workflow.idTest);
         for (let category of this.workflow.categories.models) {
             this.$el.append("<h1 data-id='" + category.get("id") + "'>" + category.get("title") + "</h1>");
             for (let test of category.get("tests").models) {
                 if (!_.isEmpty(test.get("url")) && test.get("enabled")) {
                     this.$el.append("<div style='margin-top:10px'><b>Identifier: </b></h5>");
-                    this.$el.append("<div style='margin-left:10px'>" + test.get("naturalId") + " (" + test.get("id") + ")" + "</div>");
+                    this.$el.append("<div style='margin-left:10px'>" + test.get("naturalId") + " (" + category.get("id") + "-" + test.get("id") + ")" + "</div>");
                     this.$el.append("<div><b>Description: </b></div>");
                     this.$el.append("<div style='margin-left:10px'>" + test.get("description") + "</div>");
-                    this.$el.append("<div data-id='" + test.collection.categoryId + "-" + test.get("id") + "'></div><hr>");
-                    urls.push(test.get("url") + "#" + this.executionId + "_" + test.collection.categoryId + "-" + test.get("id"));
+                    this.$el.append("<div data-id='" + test.collection.categoryId + "-" + test.get("id") + "'><span style='color:red;'>Non executed</span></div><hr>");
                 }
             }
         }
-        this.openTest(urls,0);
+        let self = this;
+        setTimeout(()=>{
+          self.workflow.openTests();
+        },1);
     }
 
     updateTextResult(id: string, result: ResultItem) {
