@@ -56,6 +56,24 @@
         "sublevel":"a",
         "url":"/backbone/T4-Asynch-update/index.html",
         "enabled":true
+      },
+      {
+        "id":"t5",
+        "naturalId": "T5-Asynch-update-random",
+        "description":"Rendering six times 42.000 elements with a single text. Each new time changes some text.",
+        "level":"5",
+        "sublevel":"a",
+        "url":"/backbone/T5-Asynch-update-random/index.html",
+        "enabled":true
+      },
+      {
+        "id":"t5b",
+        "naturalId": "T5-Asynch-update-random-underscore-template",
+        "description":"Rendering six times 42.000 elements with a single text. Each new time changes some text.",
+        "level":"5",
+        "sublevel":"b",
+        "url":"/backbone/T5-Asynch-update-random-underscore-template/index.html",
+        "enabled":true
       }
     ]
   },
@@ -115,6 +133,24 @@
         "level":"4",
         "sublevel":"b",
         "url":"/backbone_react/T4-Asynch-update-react-mode/index.html",
+        "enabled":true
+      },
+      {
+        "id":"t5a",
+        "naturalId": "T5-Asynch-update-random",
+        "description":"Rendering six times 42.000 elements with a single text. Each new time changes some text. The painting is separated in different components.",
+        "level":"5",
+        "sublevel":"a",
+        "url":"/backbone_react/T5-Asynch-update-random/index.html",
+        "enabled":true
+      },
+      {
+        "id":"t5b",
+        "naturalId": "T5-Asynch-update-random-react-mode",
+        "description":"Rendering six times 42.000 elements with a single text. Each new time changes some text. The painting only use one component.",
+        "level":"5",
+        "sublevel":"b",
+        "url":"/backbone_react/T5-Asynch-update-random-react-mode/index.html",
         "enabled":true
       }
     ]

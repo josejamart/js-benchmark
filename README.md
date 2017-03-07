@@ -13,7 +13,10 @@ Now only two frameworks are tested, Backbone, and Backbone combined with React. 
 
 ## Test execution
 
-This section will be available soon.
+To could get the results it's necessary to execute:
+```bash
+npm run dist
+````
 
 ## Conclusion
 

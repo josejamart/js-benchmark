@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" data-framework="typescript">
+	<head>
+		<meta charset="utf-8">
+		<title>Backbone.js Cell painting Benkchmar</title>
+	</head>
+	<body>
+		<div class="app"></div>
+
+  	<script type="text/template" id="all-template">
+		<% for(var i = 0; i < rows.length; i++){%>
+			<div>
+				<% for(var j = 0; j < rows[i].cells.length; j++){%>
+					<span class="text"><b>-|-</b><%=rows[i].cells[j].text%><b>-|-</b></span>
+				<%}%>
+			</div>
+		<%}%>
+    </script>
+
+		<script src="../../backbone.t5b.js"></script>
+	</body>
+</html>

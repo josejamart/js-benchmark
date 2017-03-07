@@ -11,7 +11,7 @@ export class CellPaintingView extends Backbone.View<Backbone.Model>{
     }
 
     render() {
-        //this.$el.html(this.)
+        this.$el.empty();
         for (let model of this.rows.models) {
             this.$el.append(new RowView({ model: model }).render().el);
         };

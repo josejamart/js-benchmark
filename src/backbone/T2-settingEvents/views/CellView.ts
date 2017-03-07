@@ -7,8 +7,8 @@ export class CellView extends Backbone.View<Backbone.Model>{
     template: (data: any) => string;
     events() {
         return {
-            'click': 'printRed',
-            'dblclick': 'printBlue'
+            'click .text': 'printRed',
+            'dblclick .text': 'printBlue'
         }
     }
     constructor(options?: any) {
