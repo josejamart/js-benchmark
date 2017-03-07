@@ -11,7 +11,14 @@ export class CellView extends Backbone.View<Backbone.Model>{
         this.template = _.template($('#cell-template').html());
         this.listenTo(this.model, "change",this.render);
     }
+    events() {
+        return {
+          'click .text': 'printRed',
+          'dblclick .text': 'printBlue'
+        }
+    }
     render() {
+        this.$el.empty();
         this.$el.attr("data-cid", this.cid);
         this.$el.html(this.template(this.model.toJSON()));
         return this;

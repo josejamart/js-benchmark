@@ -8,15 +8,53 @@ export interface IAppProps {
 export default class Cell extends React.Component<IAppProps, any> {
   constructor(props: IAppProps) {
     super(props);
-    this.state = props.cell.toJSON();
+    this.state = {
+      cell: props.cell.toJSON(),
+      isRed: false,
+      isBlue: false
+    };
     props.cell.on("change",this.updateState,this);
+    this.printRed = this.printRed.bind(this);
+    this.printBlue = this.printBlue.bind(this);
   }
+
+  componentWillUnmount(){
+    this.props.cell.off("change",this.updateState);
+  }
+
+  printRed() {
+    this.setState(prevState => ({
+     isRed: true,
+     isBlue: false
+   }));
+  }
+
+  printBlue() {
+    this.setState(prevState => ({
+     isRed: false,
+     isBlue: true
+   }));
+  }
+
   updateState(model:any) {
-    this.setState(model.toJSON());
+    this.setState({cell : model.toJSON()});
   }
-	render() {
-		return (
-			<span key={this.state.id} data-cid={this.state.id}> {this.state.text} </span>
-		);
-	}
+
+  render() {
+    let style = {};
+    const redStyle = {
+    color: 'red'
+  };
+  const blueStyle = {
+    color: 'blue'
+  };
+  if(this.state.isRed){
+    style = redStyle;
+  }else if(this.state.isBlue){
+    style = blueStyle;
+  }
+    return (
+      <span onClick={this.printRed} onDoubleClick={this.printBlue} style={style} key={this.state.cell.id} data-cid={this.state.cell.id}> {this.state.cell.text} </span>
+    );
+  }
 }

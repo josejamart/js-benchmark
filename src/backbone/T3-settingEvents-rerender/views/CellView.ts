@@ -12,8 +12,8 @@ export class CellView extends Backbone.View<Backbone.Model>{
     }
     events() {
         return {
-            'click': 'printRed',
-            'dblclick': 'printBlue'
+          'click .text': 'printRed',
+          'dblclick .text': 'printBlue'
         }
     }
     render() {

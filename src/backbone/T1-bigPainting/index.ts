@@ -10,24 +10,26 @@ $(() => {
   // Initiate the router
   let app_router = new TestRouter({
     testExecutor : (testId: string, close: boolean, mutationModel :MutationModel)=>{
+      // Create data collection
       let cells = new RowCollection();
 
+      // Get data from server
       cells.fetch({
         success: (collection: any) => {
-            mutationModel.startRendering();
+          // Start traking rendering time
+          mutationModel.startRendering();
 
-            let app = new CellPaintingView({ el: $(".app"), data: collection });
-            app.render();
+          // Create and render the view
+          let app = new CellPaintingView({ el: $(".app"), data: collection });
+          app.render();
 
-            mutationModel.endRendering();
+          // Stop traking rendering data.
+          mutationModel.endRendering();
         }
       });
     }
   });
 
-  // Start Backbone history a necessary step for bookmarkable URL's
+  // Start navigation
   Backbone.history.start();
-
-
-
 });
