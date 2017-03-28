@@ -18,7 +18,8 @@
       "jquery",
       "react",
       "react-dom",
-      "underscore"
+      "underscore",
+      "node"
     ]
   },
   "filesGlob" : [
