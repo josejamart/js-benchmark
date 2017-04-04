@@ -43,7 +43,8 @@ module.exports = {
         'backbone_react.t4': './src/backbone_react/T4-Asynch-update/index.tsx',
         'backbone_react.t4b': './src/backbone_react/T4-Asynch-update-react-mode/index.tsx',
         'backbone_react.t5a': './src/backbone_react/T5-Asynch-update-random/index.tsx',
-        'backbone_react.t5b': './src/backbone_react/T5-Asynch-update-random-react-mode/index.tsx'
+        'backbone_react.t5b': './src/backbone_react/T5-Asynch-update-random-react-mode/index.tsx',
+        'backbone_react.t6a': './src/backbone_react/T6-manualRendering-with-external-properties/index.tsx'
     },
     output: {
         path: resolve(__dirname, './../dist'),
@@ -74,6 +75,10 @@ module.exports = {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
                 use: 'awesome-typescript-loader'
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
             }
         ]
     }

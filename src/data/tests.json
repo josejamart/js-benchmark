@@ -152,6 +152,15 @@
         "sublevel":"b",
         "url":"/backbone_react/T5-Asynch-update-random-react-mode/index.html",
         "enabled":true
+      },
+      {
+        "id":"t6a",
+        "naturalId": "T6-manualRendering-with-external-properties",
+        "description":"Rendering a block with event capture and properties changing.",
+        "level":"6",
+        "sublevel":"a",
+        "url":"/backbone_react/T6-manualRendering-with-external-properties/index.html",
+        "enabled":true
       }
     ]
   }
