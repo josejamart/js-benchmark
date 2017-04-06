@@ -36,6 +36,8 @@ module.exports = {
         'backbone.t4': './src/backbone/T4-Asynch-update/index.ts',
         'backbone.t5': './src/backbone/T5-Asynch-update-random/index.ts',
         'backbone.t5b': './src/backbone/T5-Asynch-update-random-underscore-template/index.ts',
+        'backbone.t6a': './src/backbone/T6-manualRendering-with-external-properties/index.ts',
+        'backbone.t6b': './src/backbone/T6-manualRendering-with-external-properties-b/index.ts',
         'backbone_react.t1': './src/backbone_react/T1-bigPainting/index.tsx',
         'backbone_react.t1b': './src/backbone_react/T1-bigPainting-one-component/index.tsx',
         'backbone_react.t2': './src/backbone_react/T2-settingEvents/index.tsx',

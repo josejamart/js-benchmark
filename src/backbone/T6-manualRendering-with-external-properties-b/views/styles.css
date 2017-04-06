@@ -1,0 +1,43 @@
+.block {
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
+
+.corner {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.corner.RT {
+    right: 0;
+    top: 0;
+}
+
+.corner.RB {
+    right: 0;
+    bottom: 0;
+}
+
+.corner.LB {
+    left: 0;
+    bottom: 0;
+}
+
+.corner.LT {
+    left: 0;
+    top: 0;
+}
+
+.corner.color1 {
+    background: #F7BE81;
+}
+
+.corner.color2 {
+    background: #4000FF;
+    color: white;
+}

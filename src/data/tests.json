@@ -74,6 +74,24 @@
         "sublevel":"b",
         "url":"/backbone/T5-Asynch-update-random-underscore-template/index.html",
         "enabled":true
+      },
+      {
+        "id":"t6a",
+        "naturalId": "T6-manualRendering-with-external-properties",
+        "description":"Rendering a block with event capture and properties changing. Updates de DOM and communicates with a model.",
+        "level":"6",
+        "sublevel":"a",
+        "url":"/backbone/T6-manualRendering-with-external-properties/index.html",
+        "enabled":true
+      },
+      {
+        "id":"t6b",
+        "naturalId": "T6-manualRendering-with-external-properties-b",
+        "description":"Rendering a block with event capture and properties changing. Repaints the DOM and conumicates by callbacks",
+        "level":"6",
+        "sublevel":"b",
+        "url":"/backbone/T6-manualRendering-with-external-properties-b/index.html",
+        "enabled":true
       }
     ]
   },
