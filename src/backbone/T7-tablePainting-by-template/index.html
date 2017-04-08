@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-framework="typescript">
+	<head>
+		<meta charset="utf-8">
+		<title>Backbone.js Cell painting Benkchmar</title>
+	</head>
+	<body>
+		<div class="buttons"></div>
+		<div class="app"></div>
+
+		<script type="text/template" id="buttons-template">
+			<div>
+				<button type="button" class="b1">Reset</button>
+				<button type="button" class="b2">Change</button>
+			</div>
+		</script>
+
+    <script type="text/template" id="table-template">
+			<% for(var i = 0; i< rows.length; i++){ %>
+				<%=rows[i].name%> (<%=rows[i].id%>)<br></br>
+				<%=rows[i].address%>, <%=rows[i].addressNumber%>, <%=rows[i].flat%><br></br>
+				<%=rows[i].phone%><br></br>
+				<%=rows[i].country%><br></br>
+				<%=rows[i].region%><br></br>
+				<%=rows[i].city%><br></br>
+				<hr><hr/>
+			<% } %>
+    </script>
+
+		<script src="../../backbone.t7b.js"></script>
+	</body>
+</html>

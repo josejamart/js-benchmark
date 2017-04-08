@@ -92,6 +92,24 @@
         "sublevel":"b",
         "url":"/backbone/T6-manualRendering-with-external-properties-b/index.html",
         "enabled":true
+      },
+      {
+        "id":"t7a",
+        "naturalId": "T7-tablePainting",
+        "description":"Rendering a tabe which add a new element in an intermediate position",
+        "level":"7",
+        "sublevel":"a",
+        "url":"/backbone/T7-tablePainting/index.html",
+        "enabled":true
+      },
+      {
+        "id":"t7b",
+        "naturalId": "T7-tablePainting-by-template",
+        "description":"Rendering a tabe which add a new element in an intermediate position by using a template",
+        "level":"7",
+        "sublevel":"b",
+        "url":"/backbone/T7-tablePainting-by-template/index.html",
+        "enabled":true
       }
     ]
   },
@@ -178,6 +196,15 @@
         "level":"6",
         "sublevel":"a",
         "url":"/backbone_react/T6-manualRendering-with-external-properties/index.html",
+        "enabled":true
+      },
+      {
+        "id":"t7a",
+        "naturalId": "T7-tablePainting",
+        "description":"Rendering a tabe which add a new element in an intermediate position",
+        "level":"7",
+        "sublevel":"a",
+        "url":"/backbone_react/T7-tablePainting/index.html",
         "enabled":true
       }
     ]

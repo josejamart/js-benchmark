@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" data-framework="typescript">
+	<head>
+		<meta charset="utf-8">
+		<title>Backbone.js Cell painting Benkchmar</title>
+	</head>
+	<body>
+		<div class="buttons"></div>
+		<div class="app"></div>
+
+		<script type="text/template" id="buttons-template">
+			<div>
+				<button type="button" class="b1">Reset</button>
+				<button type="button" class="b2">Change</button>
+			</div>
+		</script>
+
+		<script type="text/template" id="row-template">
+			<%=name%> (<%=id%>)<br></br>
+			<%=address%>, <%=addressNumber%>, <%=flat%><br></br>
+			<%=phone%><br></br>
+			<%=country%><br></br>
+			<%=region%><br></br>
+			<%=city%><br></br>
+			<hr><hr/>
+    </script>
+
+		<script src="../../backbone.t7a.js"></script>
+	</body>
+</html>

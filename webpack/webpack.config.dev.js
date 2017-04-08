@@ -38,6 +38,8 @@ module.exports = {
         'backbone.t5b': './src/backbone/T5-Asynch-update-random-underscore-template/index.ts',
         'backbone.t6a': './src/backbone/T6-manualRendering-with-external-properties/index.ts',
         'backbone.t6b': './src/backbone/T6-manualRendering-with-external-properties-b/index.ts',
+        'backbone.t7a': './src/backbone/T7-tablePainting/index.ts',
+        'backbone.t7b': './src/backbone/T7-tablePainting-by-template/index.ts',
         'backbone_react.t1': './src/backbone_react/T1-bigPainting/index.tsx',
         'backbone_react.t1b': './src/backbone_react/T1-bigPainting-one-component/index.tsx',
         'backbone_react.t2': './src/backbone_react/T2-settingEvents/index.tsx',
@@ -46,7 +48,8 @@ module.exports = {
         'backbone_react.t4b': './src/backbone_react/T4-Asynch-update-react-mode/index.tsx',
         'backbone_react.t5a': './src/backbone_react/T5-Asynch-update-random/index.tsx',
         'backbone_react.t5b': './src/backbone_react/T5-Asynch-update-random-react-mode/index.tsx',
-        'backbone_react.t6a': './src/backbone_react/T6-manualRendering-with-external-properties/index.tsx'
+        'backbone_react.t6a': './src/backbone_react/T6-manualRendering-with-external-properties/index.tsx',
+        'backbone_react.t7a': './src/backbone_react/T7-tablePainting/index.tsx'
     },
     output: {
         path: resolve(__dirname, './../dist'),
