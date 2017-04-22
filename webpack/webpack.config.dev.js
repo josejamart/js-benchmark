@@ -28,23 +28,28 @@ module.exports = {
     // Using webpack multiple entry point
     entry: {
         'js-benchmark': './src/index.ts',
-        // 'backbone.t1': './src/backbone/T1-bigPainting/index.ts',
-        // 'backbone.t1b': './src/backbone/T1-bigPainting-underscore-template/index.ts',
-        // 'backbone.t1c': './src/backbone/T1-bigPainting-handlebars/index.ts',
-        // 'backbone.t2': './src/backbone/T2-settingEvents/index.ts',
-        // 'backbone.t3': './src/backbone/T3-settingEvents-rerender/index.ts',
-        // 'backbone.t4': './src/backbone/T4-Asynch-update/index.ts',
-        // 'backbone.t5': './src/backbone/T5-Asynch-update-random/index.ts',
-        // 'backbone.t5b': './src/backbone/T5-Asynch-update-random-underscore-template/index.ts',
-        // 'backbone_react.t1': './src/backbone_react/T1-bigPainting/index.tsx',
-        // 'backbone_react.t1b': './src/backbone_react/T1-bigPainting-one-component/index.tsx',
-        // 'backbone_react.t2': './src/backbone_react/T2-settingEvents/index.tsx',
-        // 'backbone_react.t3': './src/backbone_react/T3-settingEvents-rerender/index.tsx',
-        // 'backbone_react.t4': './src/backbone_react/T4-Asynch-update/index.tsx',
-        // 'backbone_react.t4b': './src/backbone_react/T4-Asynch-update-react-mode/index.tsx',
-        // 'backbone_react.t5a': './src/backbone_react/T5-Asynch-update-random/index.tsx',
-        // 'backbone_react.t5b': './src/backbone_react/T5-Asynch-update-random-react-mode/index.tsx',
-        'react.t1': './src/react/T1-bigPainting/index.tsx'
+        'backbone.t1': './src/backbone/T1-bigPainting/index.ts',
+        'backbone.t1b': './src/backbone/T1-bigPainting-underscore-template/index.ts',
+        'backbone.t1c': './src/backbone/T1-bigPainting-handlebars/index.ts',
+        'backbone.t2': './src/backbone/T2-settingEvents/index.ts',
+        'backbone.t3': './src/backbone/T3-settingEvents-rerender/index.ts',
+        'backbone.t4': './src/backbone/T4-Asynch-update/index.ts',
+        'backbone.t5': './src/backbone/T5-Asynch-update-random/index.ts',
+        'backbone.t5b': './src/backbone/T5-Asynch-update-random-underscore-template/index.ts',
+        'backbone.t6a': './src/backbone/T6-manualRendering-with-external-properties/index.ts',
+        'backbone.t6b': './src/backbone/T6-manualRendering-with-external-properties-b/index.ts',
+        'backbone.t7a': './src/backbone/T7-tablePainting/index.ts',
+        'backbone.t7b': './src/backbone/T7-tablePainting-by-template/index.ts',
+        'backbone_react.t1': './src/backbone_react/T1-bigPainting/index.tsx',
+        'backbone_react.t1b': './src/backbone_react/T1-bigPainting-one-component/index.tsx',
+        'backbone_react.t2': './src/backbone_react/T2-settingEvents/index.tsx',
+        'backbone_react.t3': './src/backbone_react/T3-settingEvents-rerender/index.tsx',
+        'backbone_react.t4': './src/backbone_react/T4-Asynch-update/index.tsx',
+        'backbone_react.t4b': './src/backbone_react/T4-Asynch-update-react-mode/index.tsx',
+        'backbone_react.t5a': './src/backbone_react/T5-Asynch-update-random/index.tsx',
+        'backbone_react.t5b': './src/backbone_react/T5-Asynch-update-random-react-mode/index.tsx',
+        'backbone_react.t6a': './src/backbone_react/T6-manualRendering-with-external-properties/index.tsx',
+        'backbone_react.t7a': './src/backbone_react/T7-tablePainting/index.tsx'
     },
     output: {
         path: resolve(__dirname, './../dist'),
@@ -63,8 +68,7 @@ module.exports = {
             { from: 'src/benchmarkFramework/index.html', to: 'index.html' },
             { from: 'src/data/*.json', to: 'data/[name].[ext]' },
             { context: './src', from: 'backbone/**/index.html',  to:'[path][name].[ext]' },
-            { context: './src', from: 'backbone_react/**/index.html',  to:'[path][name].[ext]' },
-            { context: './src', from: 'react/**/index.html',  to:'[path][name].[ext]' }
+            { context: './src', from: 'backbone_react/**/index.html',  to:'[path][name].[ext]' }
         ])
     ],
     watchOptions: {
@@ -76,6 +80,10 @@ module.exports = {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
                 use: 'awesome-typescript-loader'
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
             }
         ]
     }
