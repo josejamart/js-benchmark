@@ -15,7 +15,7 @@ module.exports = {
         contentBase: resolve(__dirname, '../dist'),
         publicPath: '/',
         port: 3000,
-        host:"0.0.0.0",
+        // host:"0.0.0.0",
         historyApiFallback: true,
         // All the stats options here: https://webpack.js.org/configuration/stats/
         stats: {
@@ -49,7 +49,8 @@ module.exports = {
         'backbone_react.t5a': './src/backbone_react/T5-Asynch-update-random/index.tsx',
         'backbone_react.t5b': './src/backbone_react/T5-Asynch-update-random-react-mode/index.tsx',
         'backbone_react.t6a': './src/backbone_react/T6-manualRendering-with-external-properties/index.tsx',
-        'backbone_react.t7a': './src/backbone_react/T7-tablePainting/index.tsx'
+        'backbone_react.t7a': './src/backbone_react/T7-tablePainting/index.tsx',
+        'react.t1': './src/react/T1-bigPainting/index.tsx',
     },
     output: {
         path: resolve(__dirname, './../dist'),
@@ -68,7 +69,8 @@ module.exports = {
             { from: 'src/benchmarkFramework/index.html', to: 'index.html' },
             { from: 'src/data/*.json', to: 'data/[name].[ext]' },
             { context: './src', from: 'backbone/**/index.html',  to:'[path][name].[ext]' },
-            { context: './src', from: 'backbone_react/**/index.html',  to:'[path][name].[ext]' }
+            { context: './src', from: 'backbone_react/**/index.html',  to:'[path][name].[ext]' },
+            { context: './src', from: 'react/**/index.html',  to:'[path][name].[ext]' }
         ])
     ],
     watchOptions: {

@@ -1,10 +1,7 @@
 import * as $ from 'jquery';
-
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-
 import * as Backbone from 'backbone';
-
 import MutationModel from "../../benchmarkFramework/models/MutationModel";
 import TestRouter from '../../benchmarkFramework/routers/TestRouter';
 
