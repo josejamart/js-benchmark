@@ -17,6 +17,7 @@
 
     <script type="text/template" id="table-template">
 			<% for(var i = 0; i< rows.length; i++){ %>
+				<div>
 				<%=rows[i].name%> (<%=rows[i].id%>)<br></br>
 				<%=rows[i].address%>, <%=rows[i].addressNumber%>, <%=rows[i].flat%><br></br>
 				<%=rows[i].phone%><br></br>
@@ -24,6 +25,7 @@
 				<%=rows[i].region%><br></br>
 				<%=rows[i].city%><br></br>
 				<hr><hr/>
+			</div>
 			<% } %>
     </script>
 

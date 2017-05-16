@@ -8,6 +8,7 @@ export interface IBlockProps {
 }
 
 export default class Block extends React.Component<IBlockProps, any> {
+	
 	render() {
 		let number: string | number = 2;
 		let firstStyle: string = "RT";
