@@ -11,7 +11,16 @@
 		<% for(var i = 0; i < rows.length; i++){%>
 			<div>
 				<% for(var j = 0; j < rows[i].cells.length; j++){%>
-					<span><%=rows[i].cells[j].text%></span>
+					<span>
+					<div>
+		      <%=rows[i].cells[j].text%>
+					<% if(rows[i].cells[j].text.length % 2 == 0){ %>
+						<span class="par" <% if(color == true) { %> style="color:blue" <% } %> > PAR </span>
+					<% } else { %>
+						<span class="impar" <% if(color == true) { %> style="color:blue" <% } %> > IMPAR </span>
+					<% } %>
+					</div>
+					</span>
 				<%}%>
 			</div>
 		<%}%>

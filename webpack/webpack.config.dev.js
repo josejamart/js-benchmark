@@ -31,6 +31,7 @@ module.exports = {
         'backbone.t1': './src/backbone/T1-bigPainting/index.ts',
         'backbone.t1b': './src/backbone/T1-bigPainting-underscore-template/index.ts',
         'backbone.t1c': './src/backbone/T1-bigPainting-handlebars/index.ts',
+        'backbone.t1d': './src/backbone/T1-bigPainting-jquery/index.ts',
         'backbone.t2': './src/backbone/T2-settingEvents/index.ts',
         'backbone.t3': './src/backbone/T3-settingEvents-rerender/index.ts',
         'backbone.t4': './src/backbone/T4-Asynch-update/index.ts',

@@ -9,7 +9,7 @@ $(() => {
 
   // Initiate the router
   let app_router = new TestRouter({
-    testExecutor : (testId: string, close: boolean, mutationModel :MutationModel)=>{
+    testExecutor: (testId: string, close: boolean, mutationModel: MutationModel) => {
       // Create data collection
       let cells = new RowCollection();
 
@@ -21,6 +21,10 @@ $(() => {
 
           // Create and render the view
           let app = new CellPaintingView({ el: $(".app"), data: collection });
+          app.render();
+          app.render();
+          app.render();
+          app.render();
           app.render();
 
           // Stop traking rendering data.

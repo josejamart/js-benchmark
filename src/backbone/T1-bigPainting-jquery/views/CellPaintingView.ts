@@ -1,0 +1,21 @@
+import * as Backbone from 'backbone';
+import * as $ from 'jquery';
+import {RowCollection} from '../models/RowCollection';
+import {RowView} from './RowView';
+
+export class CellPaintingView extends Backbone.View<Backbone.Model>{
+    rows: RowCollection;
+    constructor(options?: any) {
+        super(options);
+        this.rows = options.data;
+    }
+
+    render() {
+        this.$el.empty();
+        for (let model of this.rows.models) {
+            this.$el.append(new RowView({ model: model }).render().el);
+        };
+
+        return this;
+    }
+}

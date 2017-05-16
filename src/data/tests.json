@@ -19,7 +19,7 @@
         "level":"1",
         "sublevel":"b",
         "url":"/backbone/T1-bigPainting-underscore-template/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t1c",
@@ -28,6 +28,15 @@
         "level":"1",
         "sublevel":"c",
         "url":"/backbone/T1-bigPainting-handlebars/index.html",
+        "enabled":false
+      },
+      {
+        "id":"t1d",
+        "naturalId": "T1-bigPainting-handlebars",
+        "description":"Rendering 42.000 elements with a single text. This test use JQuery",
+        "level":"1",
+        "sublevel":"d",
+        "url":"/backbone/T1-bigPainting-jquery/index.html",
         "enabled":true
       },
       {
@@ -37,7 +46,7 @@
         "level":"2",
         "sublevel":"a",
         "url":"/backbone/T2-settingEvents/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t3",
@@ -46,7 +55,7 @@
         "level":"3",
         "sublevel":"a",
         "url":"/backbone/T3-settingEvents-rerender/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t4",
@@ -55,7 +64,7 @@
         "level":"4",
         "sublevel":"a",
         "url":"/backbone/T4-Asynch-update/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t5",
@@ -64,7 +73,7 @@
         "level":"5",
         "sublevel":"a",
         "url":"/backbone/T5-Asynch-update-random/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t5b",
@@ -73,7 +82,7 @@
         "level":"5",
         "sublevel":"b",
         "url":"/backbone/T5-Asynch-update-random-underscore-template/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t6a",
@@ -82,7 +91,7 @@
         "level":"6",
         "sublevel":"a",
         "url":"/backbone/T6-manualRendering-with-external-properties/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t6b",
@@ -91,7 +100,7 @@
         "level":"6",
         "sublevel":"b",
         "url":"/backbone/T6-manualRendering-with-external-properties-b/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t7a",
@@ -100,7 +109,7 @@
         "level":"7",
         "sublevel":"a",
         "url":"/backbone/T7-tablePainting/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t7b",
@@ -109,7 +118,7 @@
         "level":"7",
         "sublevel":"b",
         "url":"/backbone/T7-tablePainting-by-template/index.html",
-        "enabled":true
+        "enabled":false
       }
     ]
   },
@@ -124,7 +133,7 @@
         "level":"1",
         "sublevel":"a",
         "url":"/backbone_react/T1-bigPainting/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t1b",
@@ -133,7 +142,7 @@
         "level":"1",
         "sublevel":"b",
         "url":"/backbone_react/T1-bigPainting-one-component/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t2",
@@ -142,7 +151,7 @@
         "level":"2",
         "sublevel":"a",
         "url":"/backbone_react/T2-settingEvents/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t3",
@@ -151,7 +160,7 @@
         "level":"3",
         "sublevel":"a",
         "url":"/backbone_react/T3-settingEvents-rerender/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t4a",
@@ -160,7 +169,7 @@
         "level":"4",
         "sublevel":"a",
         "url":"/backbone_react/T4-Asynch-update/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t4b",
@@ -169,7 +178,7 @@
         "level":"4",
         "sublevel":"b",
         "url":"/backbone_react/T4-Asynch-update-react-mode/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t5a",
@@ -178,7 +187,7 @@
         "level":"5",
         "sublevel":"a",
         "url":"/backbone_react/T5-Asynch-update-random/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t5b",
@@ -187,7 +196,7 @@
         "level":"5",
         "sublevel":"b",
         "url":"/backbone_react/T5-Asynch-update-random-react-mode/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t6a",
@@ -196,7 +205,7 @@
         "level":"6",
         "sublevel":"a",
         "url":"/backbone_react/T6-manualRendering-with-external-properties/index.html",
-        "enabled":true
+        "enabled":false
       },
       {
         "id":"t7a",
@@ -205,7 +214,7 @@
         "level":"7",
         "sublevel":"a",
         "url":"/backbone_react/T7-tablePainting/index.html",
-        "enabled":true
+        "enabled":false
       }
     ]
   }

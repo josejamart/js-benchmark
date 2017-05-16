@@ -17,7 +17,23 @@ $(() => {
 
           let app = new CellPaintingView({ el: $("#app"), data: collection });
           app.render();
+          app.color = true;
+          app.render();
+          /*
+                    for (let i = 0; i < 10; i++) {
+                      var elements: any = document.getElementsByClassName("impar");
+                      for (let i: number = 0; i < elements.length; i++) {
+                        elements[i].style.color = "blue";
+                      }
+                      elements = null;
 
+                      elements = document.getElementsByClassName("par");
+                      for (let i: number = 0; i < elements.length; i++) {
+                        elements[i].style.color = "blue";
+                      }
+                      elements = null;
+                    }
+          */
           mutationModel.endRendering();
         }
       });

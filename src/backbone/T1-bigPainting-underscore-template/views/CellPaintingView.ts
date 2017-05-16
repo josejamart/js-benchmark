@@ -4,17 +4,18 @@ import * as _ from 'underscore';
 import {RowCollection} from '../models/RowCollection';
 
 export class CellPaintingView extends Backbone.View<Backbone.Model>{
-    rows: RowCollection;
-    template: (data: any) => string;
-    constructor(options?: any) {
-        super(options);
-        this.rows = options.data;
-        this.template = _.template($('#all-template').html());
-    }
+  rows: RowCollection;
+  template: (data: any) => string;
+  color: boolean;
+  constructor(options?: any) {
+    super(options);
+    this.rows = options.data;
+    this.template = _.template($('#all-template').html());
+  }
 
-    render() {
-        this.$el.html(this.template({ rows: this.rows.toJSON() }))
+  render() {
+    this.$el.html(this.template({ rows: this.rows.toJSON(), color: this.color }))
 
-        return this;
-    }
+    return this;
+  }
 }
